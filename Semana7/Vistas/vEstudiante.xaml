@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Semana7.Vistas.vEstudiante"
+             Title="vEstudiante">
+    <VerticalStackLayout 
+        Spacing="20"
+        Margin="30">
+        <Label 
+            Text="Listado Estudiante web - GET"
+            FontSize="20"
+            HorizontalTextAlignment="Center"/>
+        <Frame Margin="20" Padding="5" HasShadow="True" BorderColor="Black" CornerRadius="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <BoxView Color="AliceBlue" Grid.ColumnSpan="4" />
+
+                <Label  Grid.Row="0"   Grid.Column="0"  TextColor="Red" Text="Codigo" FontAttributes="Bold"/>
+                <Label  Grid.Row="0"   Grid.Column="1"  TextColor="Red" Text="Nombre" FontAttributes="Bold"/>
+                <Label  Grid.Row="0" Grid.Column="2"  TextColor="Red" Text="Apellido" FontAttributes="Bold"/>
+                <Label  Grid.Row="0"     Grid.Column="3"  TextColor="Red" Text="Edad" FontAttributes="Bold"/>
+
+                <CollectionView x:Name="listaEstudiantes" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label x:Name="lblcodigo" Text="{Binding codigo}" Grid.Column="0" FontAttributes="Bold"/>
+                                <Label x:Name="lblNombre" Text="{Binding nombre}" Grid.Column="1" />
+                                <Label x:Name="lblApellido" Text="{Binding apellido}" Grid.Column="2"/>
+                                <Label x:Name="lbledad" Text="{Binding edad}" Grid.Column="3"/>
+                                <Button x:Name="btnmantenimiento" Text="Mantenimiento" Clicked="btnmantenimiento_Clicked" Grid.Column="4" BackgroundColor="Black"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </Frame>
+
+        <Button  x:Name="btnagregar" Text="Agregar nuevo" Clicked="btnagregar_Clicked" Background="Black"/>
+
+    </VerticalStackLayout>
+</ContentPage>

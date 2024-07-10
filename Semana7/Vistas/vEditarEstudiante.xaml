@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Semana7.Vistas.vEditarEstudiante"
+             Title="vEditarEstudiante">
+    <VerticalStackLayout>
+        <Label 
+            Text="Mantenimiento!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Frame Margin="20" Padding="5" HasShadow="True" BorderColor="Black" CornerRadius="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <BoxView Color="AliceBlue" Grid.ColumnSpan="4" />
+
+                <Label x:Name="Codigo" Grid.Row="0"   Grid.Column="0"  TextColor="BlueViolet" Text="Codigo" FontAttributes="Bold"/>
+                <Label x:Name="Nombre" Grid.Row="0"   Grid.Column="1"  TextColor="BlueViolet" Text="Nombre" FontAttributes="Bold"/>
+                <Label x:Name="Apellido" Grid.Row="0" Grid.Column="2"  TextColor="BlueViolet" Text="Aepllido" FontAttributes="Bold"/>
+                <Label x:Name="Edad" Grid.Row="0"     Grid.Column="3"  TextColor="BlueViolet" Text="Edad" FontAttributes="Bold"/>
+
+                <Entry x:Name="txtCodigo" Text="{Binding codigo}" Grid.Row="1" Grid.Column="0"/>
+                <Entry x:Name="txtNombre" Text="{Binding nombre}" Grid.Row="1" Grid.Column="1"/>
+                <Entry x:Name="txtApellido" Text="{Binding apellido}" Grid.Row="1" Grid.Column="2"/>
+                <Entry x:Name="txtEdad" Text="{Binding edad}" Grid.Row="1" Grid.Column="3"/>
+                
+            </Grid>
+        </Frame>
+
+        <Frame Margin="20" Padding="5" HasShadow="True" BorderColor="Black" CornerRadius="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnEditar" Text="Editar" Clicked="btnEditar_Clicked" Grid.Row="0" Grid.Column="0" BackgroundColor="DarkKhaki"/>
+                <Button x:Name="btnEliminar" Text="Eliminar" Clicked="btnEliminar_Clicked" Grid.Row="0"  Grid.Column="1" BackgroundColor="DarkRed"/>
+                <Button x:Name="btnCacnelar" Text="Cancelar" Clicked="btnCacnelar_Clicked" Grid.Row="0"  Grid.Column="2" BackgroundColor="DarkCyan"/>
+            </Grid>
+        </Frame>
+       
+    </VerticalStackLayout>
+</ContentPage>
